@@ -1,0 +1,34 @@
+{
+  "name": "azenix-web-coming-soon",
+  "version": "1.0.0",
+  "productName": "Azenix Website Coming Soon",
+  "description": "AzeniX Website Coming Soon",
+  "contributors": [
+    "Daniel Nováčik",
+    "Heye Everts",
+    "Ekaterina Budnikov"
+  ],
+  "scripts": {
+    "create-dirs": "mkdirp public/assets/js/min && mkdirp public/assets/css/min",
+    "uglify": "uglifyjs public/assets/js/*.js -o public/assets/js/min/bundle.min.js",
+    "minify": "cleancss -o public/assets/css/min/bundle.min.css public/assets/css/*.css",
+    "start": "npm run create-dirs && npm run uglify && npm run minify && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AzenixCode/azenix-web-coming-soon.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AzenixCode/azenix-web-coming-soon/issues"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.1.10",
+    "compression": "^1.7.1",
+    "mkdirp": "^0.5.1",
+    "uglify-js": "^3.3.8"
+  }
+}
